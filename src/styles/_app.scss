@@ -1,0 +1,17 @@
+.app {
+   display: flex;
+   justify-content: center;
+   position: relative;
+   height: 200vh;
+   background-color: hsl(0, 0%, 98%);
+   header {
+      display: flex;
+      justify-content: center;
+      position: fixed;
+      height: 300px;
+      width: 100%;
+      top: 0;
+      background-color: hsl(0, 0%, 98%);
+      z-index: 2;
+   }
+}
