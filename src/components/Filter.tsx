@@ -1,16 +1,35 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowDown } from '@fortawesome/free-solid-svg-icons';
+import { useEffect, useState } from 'react';
 
-const Filter = () => {
+const Filter = (props: {
+   filterInput: string,
+   setFilterInput: React.Dispatch<React.SetStateAction<string>>,
+   activeRegion: string,
+   setActiveRegion: React.Dispatch<React.SetStateAction<string>>
+}) => {
+   const [filterMenuActive, setFilterMenuActive] = useState(false);
+
+
+   const regions = ['Africa', 'Americas', 'Asia', 'Europe', 'Oceania']
+
+   const filterActiveHandler = () => {
+      setFilterMenuActive(!filterMenuActive);
+   }
+   const filterPickRegion = (e: any) => {
+      props.setActiveRegion(e.target.outerText)
+      setFilterMenuActive(false);
+   }
+   useEffect(() => {
+
+   }, [props.filterInput])
    return (
       <div className="filter">
-         <button className="filter-button">Filter by Region <span><FontAwesomeIcon icon={faArrowDown} /></span></button>
-         <ul className="filter-list ">
-            <li>Africa</li>
-            <li>America</li>
-            <li>Asia</li>
-            <li>Europe</li>
-            <li>Oceania</li>
+         <button onClick={filterActiveHandler} className="filter-button">Filter by Region <span><FontAwesomeIcon icon={faArrowDown} /></span></button>
+         <ul style={filterMenuActive ? { display: 'block' } : { display: 'none' }} className="filter-list ">
+            {regions.map((item) => {
+               return <li onClick={filterPickRegion}>{item}</li>
+            })}
 
          </ul>
       </div>

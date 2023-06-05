@@ -1,7 +1,9 @@
 .countries {
-   position: absolute;
+   position: relative;
+   display: flex;
+   flex-wrap: wrap;
    width: 80%;
-   top: 20%;
-   overflow: hidden;
+   height: 60%;
+   top: 40%;
    z-index: 0;
 }

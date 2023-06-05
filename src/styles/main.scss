@@ -2,11 +2,13 @@
 // font-family: 'Nunito Sans', sans-serif;
 @import './reset';
 @import './app';
+@import './loading';
 @import './headbar';
 @import './searchbar';
 @import './filter';
 @import './countries';
 @import './country';
+
 body {
    font-family: 'Nunito Sans', sans-serif;
    font-size: 10px;
