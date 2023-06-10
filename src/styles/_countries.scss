@@ -1,9 +1,12 @@
 .countries {
    position: relative;
+   background-color: $sec-bg-color;
+   width: 100%;
    display: flex;
    flex-wrap: wrap;
-   width: 80%;
+   justify-content: center;
+   align-items: center;
    height: 60%;
-   top: 40%;
+   top: 320px;
    z-index: 0;
 }

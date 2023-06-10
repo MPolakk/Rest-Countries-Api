@@ -1,6 +1,6 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
-import React from 'react'
+import React, { useState } from 'react'
 
 
 
@@ -10,9 +10,8 @@ const SearchBar = (props: {
    setSearchInput: React.Dispatch<React.SetStateAction<string>>
 }) => {
 
-   console.log(props.searchInput)
    return (
-      <div className="search-bar">
+      <div className="search-bar ">
          <div>
             <label htmlFor="search"><FontAwesomeIcon icon={faMagnifyingGlass} className="icon" />
             </label>

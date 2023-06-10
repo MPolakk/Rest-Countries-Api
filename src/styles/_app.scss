@@ -1,9 +1,16 @@
+
+
+
 .app {
    display: flex;
    justify-content: center;
    position: relative;
-   height: 100vh;
-   background-color: hsl(0, 0%, 98%);
+   min-height: 100vh;
+   background-color: $base-bg-color;
+   
+
+
+
    header {
       display: flex;
       justify-content: center;
@@ -11,7 +18,67 @@
       height: 300px;
       width: 100%;
       top: 0;
-      background-color: hsl(0, 0%, 98%);
+      background-color: $base-bg-color;
       z-index: 2;
+      
+   }
+}
+
+
+
+//DarkMode
+
+.darkmode {
+   background-color: $base-bg-darkmode-color;
+   color: $text-darkomode-color;
+   header {
+   background-color: $base-bg-darkmode-color;
+      .headbar {
+      background-color: $sec-bg-darkmode-color;
+         button{
+            color: $text-darkomode-color;
+         }
+      }
+      .search-bar {
+         background-color: $base-bg-darkmode-color;
+         
+         div {
+            background-color: $text-darkomode-color;
+            box-shadow: none;
+            background-color: $sec-bg-darkmode-color;
+            .icon {
+               color: $text-darkomode-color;
+               
+            }
+            input { 
+            background-color: inherit;
+            color: $text-darkomode-color;
+               &::placeholder{
+                  color: $text-darkomode-color;
+               }
+            }
+         }
+      }
+
+      .filter {
+         background-color: inherit;
+         .filter-button {
+            background-color: $sec-bg-darkmode-color;
+            box-shadow: none;
+            color: $text-darkomode-color;
+         }
+         ul {
+            background-color: $sec-bg-darkmode-color;
+            color: $text-darkomode-color;
+            box-shadow: none;
+         }
+      }
+   }
+   .countries {
+      background-color: $base-bg-darkmode-color;
+      .country {
+         background-color: $sec-bg-darkmode-color;
+         box-shadow: none;
+      }
    }
 }

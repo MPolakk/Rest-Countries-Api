@@ -1,11 +1,17 @@
 import Country from './Country';
 import Loading from './Loading';
 import uuid from 'react-uuid';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useContext } from 'react';
+import { AppContext } from './App';
 const Countries = (props: {
    searchInput: string,
    activeRegion: string
 }) => {
+
+   const context = useContext(AppContext)
+
+
+
    interface countriesTypes {
       capital: Array<string>,
       flags: { png: string },
@@ -28,13 +34,14 @@ const Countries = (props: {
       setAllCountriesData(jsonData);
       setIsLoading(false);
    }
+
    const filterDataByRegion = () => {
       const countries = allCountriesData.filter((item) => {
-         console.log(item.region)
          return item.region == props.activeRegion
       })
       setCountriesData(countries);
    }
+
    const filterData = () => {
       const countries = allCountriesData.filter((item) => {
          const countryName: string = item.name.common.toLowerCase();
@@ -42,6 +49,7 @@ const Countries = (props: {
       })
       setCountriesData(countries);
    }
+
    const checkSearchInput = () => {
       if (!props.searchInput && !props.activeRegion) {
          setCountriesData(allCountriesData)
