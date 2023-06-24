@@ -19,7 +19,7 @@
       width: 100%;
       top: 0;
       background-color: $base-bg-color;
-      z-index: 2;
+      z-index: 1;
       
    }
 }
@@ -31,14 +31,15 @@
 .darkmode {
    background-color: $base-bg-darkmode-color;
    color: $text-darkomode-color;
-   header {
-   background-color: $base-bg-darkmode-color;
-      .headbar {
+   .headbar {
       background-color: $sec-bg-darkmode-color;
          button{
             color: $text-darkomode-color;
          }
       }
+   header {
+   background-color: $base-bg-darkmode-color;
+      
       .search-bar {
          background-color: $base-bg-darkmode-color;
          

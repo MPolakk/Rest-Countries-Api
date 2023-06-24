@@ -2,7 +2,7 @@
 // font-family: 'Nunito Sans', sans-serif;
 @import './reset';
 @import './utilities/variables';
-@import './utilities/mixins';
+@import './utilities/breakpoints';
 @import './app';
 @import './loading';
 @import './headbar';
@@ -10,7 +10,7 @@
 @import './filter';
 @import './countries';
 @import './country';
-
+@import './pop-up';
 body {
    font-family: 'Nunito Sans', sans-serif;
    font-size: 10px;

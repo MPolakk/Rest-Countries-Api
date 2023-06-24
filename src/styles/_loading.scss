@@ -1,8 +1,11 @@
 .loading {
+   position: absolute;
+   background-color: transparent;
    display: grid;
    place-items: start center;
-   width: 100%;
-   min-height: 100%;
+   width: 100px;
+   height: 100px;
+   top: 50%;
    &__circle {
       position: relative;
       width: 40px;

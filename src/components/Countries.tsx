@@ -19,13 +19,10 @@ const Countries = (props: {
       population: number,
       region: string
    }
+
    const [allCountriesData, setAllCountriesData] = useState<countriesTypes[]>([])
    const [countriesData, setCountriesData] = useState<countriesTypes[]>([])
    const [isLoading, setIsLoading] = useState<boolean>(true)
-
-
-
-
 
    const APIData = async () => {
       setIsLoading(true);
@@ -59,18 +56,24 @@ const Countries = (props: {
    }
 
    const loadingHandler = () => {
+
       if (isLoading) {
          return <Loading />
       } else {
-         return countriesData.map((item) => {
-            return <Country
-               key={uuid()}
-               capital={item.capital}
-               flags={item.flags}
-               population={item.population}
-               region={item.region}
-               name={item.name.common} />
-         })
+         return (
+            <div className="countries">
+               {countriesData.map((item) => {
+                  return <Country
+                     key={uuid()}
+                     capital={item.capital}
+                     flags={item.flags}
+                     population={item.population}
+                     region={item.region}
+                     name={item.name.common} />
+
+
+               })}
+            </div>)
       }
    }
 
@@ -92,9 +95,9 @@ const Countries = (props: {
 
    }, [props.activeRegion])
    return (
-      <div className="countries">
+      <>
          {loadingHandler()}
-      </div>
+      </>
    );
 }
 

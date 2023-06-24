@@ -27,8 +27,8 @@ const Filter = (props: {
       <div className="filter">
          <button onClick={filterActiveHandler} className="filter-button">Filter by Region <span><FontAwesomeIcon icon={faArrowDown} /></span></button>
          <ul style={filterMenuActive ? { display: 'block' } : { display: 'none' }} className="filter-list ">
-            {regions.map((item) => {
-               return <li onClick={filterPickRegion}>{item}</li>
+            {regions.map((item, index) => {
+               return <li key={index} onClick={filterPickRegion}>{item}</li>
             })}
 
          </ul>
